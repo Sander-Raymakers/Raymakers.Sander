@@ -1,18 +1,14 @@
-<%@ page import="domain.db.SeizoenDB" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <title>Home</title>
+    <title>Gevonden</title>
     <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-
 <header>
     <div class="grid-containerIndex">
         <h1 class="titel">Mijn Doelpunten</h1>
-        <h2 class="naamPagina">Home</h2>
+        <h2 class="naamPagina">Gevonden</h2>
         <div class="navBar">
             <nav>
                 <ul>
@@ -25,18 +21,9 @@
         </div>
     </div>
 </header>
-
 <main>
-    <h3>Info:</h3>
-    <article>
-        <p>Deze website is gemaakt om al mijn doelpunten bij te houden doorheen de jaren dat ik voetbal speelde.</p>
-        <!--
-        <p>Gemiddelde aantal doelpunten: ((SeizoenDB)request.getAttribute("gemiddeldeDoelpunten")).gemiddeldAantalDoelpunten()%>.</p>
-        <p>Hoogst aantal doelpunten:  ((SeizoenDB)request.getAttribute("hoogstAantalDoelpunten")).hoogstAantalDoelpunten()%></p>
-        -->
-    </article>
+<p>Het seizoen <%= request.getParameter("seizoen")%> zit in het overzicht.</p>
 </main>
-
 <footer>
     <div class="footer-container">
         <p>r0785279</p>
@@ -44,6 +31,5 @@
         <p>2020-2021</p>
     </div>
 </footer>
-
 </body>
 </html>

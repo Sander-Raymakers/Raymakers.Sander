@@ -1,0 +1,152 @@
+/*  Algemeen  */
+html{
+    font-family: Arial, sans-serif;
+}
+body {
+    margin: 0;
+}
+
+body{
+    background-color: antiquewhite;
+}
+
+
+/* Main */
+main {
+    margin: 1em;
+}
+main p{
+    padding-top: 1em;
+    padding-bottom: 1em;
+
+}
+
+/* Navigatie bar*/
+.navBar{
+    grid-area: Navigatie;
+}
+.navBar nav{
+    box-sizing: border-box;
+    background-color: red;
+    display: flex;
+}
+
+.navBar ul{
+    list-style-type: none;
+    margin: auto;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+
+}
+.navBar li{
+    width: 100%;
+    text-align: center;
+}
+
+
+.navBar a {
+    display: block;
+    padding: 4%;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+
+}
+.navBar li a:hover{
+    background-color: darkred;
+}
+
+/* Footer */
+footer{
+    background-color: red;
+    color: white;
+
+}
+
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em;
+
+}
+
+/* Voeg Toe*/
+.Voeg-toeContainer > div{
+    padding: 1em;
+}
+
+/* overzicht.html */
+table, td, th {
+    border: 1px solid #000;
+    border-collapse: collapse;
+
+}
+
+table {
+    table-layout: fixed;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+th {
+    text-align: left;
+    background-color: red;
+}
+
+td, th {
+    padding: 1em;
+}
+.titel{
+    grid-area: Titel;
+    text-align: center;
+    background: black;
+    color: white;
+    padding: 1em;
+    margin-top: auto;
+    margin-bottom: auto;
+
+}
+
+.naamPagina{
+    grid-area: Naampagina;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+
+}
+
+.grid-containerIndex{
+    display: grid;
+    grid-template-areas:
+    'Titel Titel Titel'
+    'Navigatie Navigatie Naampagina';
+}
+
+@media screen and (max-width: 600px) {
+
+    /*overzicht.html*/
+
+    th {
+        display: none; /* hide table head */
+        background-color: red;
+    }
+
+    td {
+        display: block; /* overwrite display: table property*/
+        width: auto;
+        border: none;
+    }
+
+    td:nth-of-type(1), td:nth-of-type(2) {
+        font-weight: bold; /* mark heading items of each cyclist */
+        display: inline-block;
+        width: auto;
+
+    }
+
+    td:nth-of-type(1) {
+        text-align: left; /* correction of basicTable */
+    }
+}

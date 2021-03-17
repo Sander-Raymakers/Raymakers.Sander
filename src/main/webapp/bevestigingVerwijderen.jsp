@@ -1,18 +1,14 @@
-<%@ page import="domain.db.SeizoenDB" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <title>Home</title>
+    <title>Verwijderen?</title>
     <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-
 <header>
     <div class="grid-containerIndex">
         <h1 class="titel">Mijn Doelpunten</h1>
-        <h2 class="naamPagina">Home</h2>
+        <h2 class="naamPagina">Verwijderen?</h2>
         <div class="navBar">
             <nav>
                 <ul>
@@ -25,18 +21,14 @@
         </div>
     </div>
 </header>
-
 <main>
-    <h3>Info:</h3>
-    <article>
-        <p>Deze website is gemaakt om al mijn doelpunten bij te houden doorheen de jaren dat ik voetbal speelde.</p>
-        <!--
-        <p>Gemiddelde aantal doelpunten: ((SeizoenDB)request.getAttribute("gemiddeldeDoelpunten")).gemiddeldAantalDoelpunten()%>.</p>
-        <p>Hoogst aantal doelpunten:  ((SeizoenDB)request.getAttribute("hoogstAantalDoelpunten")).hoogstAantalDoelpunten()%></p>
-        -->
-    </article>
+    <h3>Verwijderen?</h3>
+    <p>Ben je zeker dat dit seizoen <%= request.getParameter("seizoen")%> wil verwijderen?</p>
+    <form action="Servlet?command=delete&seizoen=<%= request.getParameter("seizoen")%>" method="POST">
+        <input type="submit" value="Ja"/>
+    </form>
+    <p><a href="Servlet?command=overzicht">Cancel</a> indien je <%= request.getParameter("seizoen")%> niet wil verwijderen</p>
 </main>
-
 <footer>
     <div class="footer-container">
         <p>r0785279</p>
@@ -44,6 +36,5 @@
         <p>2020-2021</p>
     </div>
 </footer>
-
 </body>
 </html>

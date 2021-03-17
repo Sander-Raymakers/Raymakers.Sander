@@ -1,18 +1,16 @@
-<%@ page import="domain.db.SeizoenDB" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>Zoek</title>
     <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-
 <header>
     <div class="grid-containerIndex">
         <h1 class="titel">Mijn Doelpunten</h1>
-        <h2 class="naamPagina">Home</h2>
+        <h2 class="naamPagina">Zoek</h2>
         <div class="navBar">
             <nav>
                 <ul>
@@ -25,18 +23,19 @@
         </div>
     </div>
 </header>
-
 <main>
-    <h3>Info:</h3>
-    <article>
-        <p>Deze website is gemaakt om al mijn doelpunten bij te houden doorheen de jaren dat ik voetbal speelde.</p>
-        <!--
-        <p>Gemiddelde aantal doelpunten: ((SeizoenDB)request.getAttribute("gemiddeldeDoelpunten")).gemiddeldAantalDoelpunten()%>.</p>
-        <p>Hoogst aantal doelpunten:  ((SeizoenDB)request.getAttribute("hoogstAantalDoelpunten")).hoogstAantalDoelpunten()%></p>
-        -->
-    </article>
+    <form method="Get" action="Servlet" novalidate>
+        <h3>Vul een seizoen in om het te zoeken.</h3>
+        <p>
+            <label for="seizoen">Seizoen:</label>
+            <input id="seizoen" name="seizoen" type="text" placeholder="S+jaartal" required>
+        </p>
+        <p>
+            <input id="zoek" type="submit" value="Zoek seizoen">
+            <input type="hidden" name="command" value="zoek">
+        </p>
+    </form>
 </main>
-
 <footer>
     <div class="footer-container">
         <p>r0785279</p>
@@ -44,6 +43,5 @@
         <p>2020-2021</p>
     </div>
 </footer>
-
 </body>
 </html>
